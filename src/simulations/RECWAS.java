@@ -1378,12 +1378,12 @@ public class RECWAS {
 		
 		if (args.length == 0) {
 
-			System.out.println("RECWAS: Leveraging Random Effects in Chromatin-Wide Association Studies"
+			System.out.println("RECWAS: Leveraging Random Effects in Cistrome-Wide Association Studies"
 					+ ".\n Usage:\nRECWAS\n" + "-format csv|plink\n" + "-input_genotype INPUT_GENOTYPE_FILE\n"
 					+ "-input_phenotype INPUT_PHENOTYPE_FILE\n"
 					+ "-input_phenotype_column INPUT_PHENOTYPE_COLUMN_START:2\n"
 					+ "-input_phenotype_type PHENOTYPE_TYPE: continuous|binary\n"
-					+ "-weights_info WEIGHTS_INFORMATION_FILE\n" + "-gene INPUT_ENSEMBL_GENE_ID\n"
+					+ "-weights_info WEIGHTS_INFORMATION_FILE\n" + "-peak INPUT_PEAK_ID\n"
 					+ "-plink PLINK_BINARY_FILE_PATH\n" + "-Rscript RSCRIPT_BINARY_FILE_PATH\n"
 					+ "-output_folder OUTPUT_FOLDER_PATH\n");
 			System.exit(0);
@@ -1393,13 +1393,13 @@ public class RECWAS {
 		if (args[0].equals("RECWAS")) {
 			final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 			if (args.length < 14) {
-				System.out.println("Leveraging Random Effects in Chromatin-Wide Association Studies.\n"
+				System.out.println("Leveraging Random Effects in Cistrome-Wide Association Studies.\n"
 						+ " Usage:\nRECWAS\n"
 						+ "-format csv|plink\n" + "-input_genotype INPUT_GENOTYPE_FILE\n"
 						+ "-input_phenotype INPUT_PHENOTYPE_FILE\n"
 						+ "-input_phenotype_column INPUT_PHENOTYPE_COLUMN_START:2\n"
 						+ "-input_phenotype_type PHENOTYPE_TYPE: continuous|binary\n"
-						+ "-weights_info INPUT_EQTL_INFORMATION_FILE\n" + "-gene INPUT_ENSEMBL_GENE_ID\n"
+						+ "-weights_info INPUT_EQTL_INFORMATION_FILE\n" + "-peak INPUT_PEAK_ID\n"
 						+ "-plink PLINK_BINARY_FILE_PATH\n" + "-Rscript RSCRIPT_BINARY_FILE_PATH\n"
 						+ "-output_folder OUTPUT_FOLDER_PATH\n");
 				System.exit(0);
@@ -1421,7 +1421,7 @@ public class RECWAS {
 							column = args[k + 1];
 						else if (args[k].equals("-weights_info"))
 							info_file = args[k + 1];
-						else if (args[k].equals("-gene"))
+						else if (args[k].equals("-peak"))
 							gene_id = args[k + 1];
 						else if (args[k].equals("-output_folder"))
 							output_folder = args[k + 1];
@@ -1457,7 +1457,7 @@ public class RECWAS {
 					System.out.println("Please provide the absolute path of the Rscript binary file!");
 					System.exit(0);
 				} else if (gene_id == null) {
-					System.out.println("Please input ensembl gene id!");
+					System.out.println("Please input peak id!");
 					System.exit(0);
 				} else if (plink == null) {
 					System.out.println("Please provide the accurate peak identify synonym!");
