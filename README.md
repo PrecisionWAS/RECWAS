@@ -1,4 +1,4 @@
-# Users' Manual of RECWAS (Version 1.0.0)
+# Users' Manual of RECWAS (Version 1.0)
 Random Effect Cistrome-Wide Association Studies (RECWAS): Leveraging Random Effects in Cistrome-Wide Association Studies for Decoding the Genetic Determinants of Prostate Cancer.
 
 ## Overview of RECWAS
@@ -20,7 +20,7 @@ RECWAS is a batteries-included JAR executable. All needed external jar packages 
 - **Usage**
   - 
   ```java
-    java  -jar  RECWAS.jar  RECWAS  -format  plink|csv  -input_genotype  path/to/example.tped|example.csv  -input_phenotype  path/to/example.tfam|example.tsv  -input_phenotype_column  6|2  -input_phenotype_type  continuous|binary  -weights_info  path/to/CWAS_AR_top1.txt  -gene  chr2:10730750-10731350  -plink  path/to/plink  -Rscript  path/to/Rscript  -output_folder  path/to/output_folder
+    java  -jar  RECWAS.jar  RECWAS  -format  plink|csv  -input_genotype  path/to/example.tped|example.csv  -input_phenotype  path/to/example.tfam|example.tsv  -input_phenotype_column  6|2  -input_phenotype_type  continuous|binary  -weights_info  path/to/CWAS_AR_top1.txt  -peak  chr2:10730750-10731350  -plink  path/to/plink  -Rscript  path/to/Rscript  -output_folder  path/to/output_folder
     ```
 
 - **Arguments**
@@ -30,7 +30,7 @@ RECWAS is a batteries-included JAR executable. All needed external jar packages 
   - **input_phenotype_column:** the column of phenotype in the phenotype file.
   - **input_phenotype_type:** the type of phenotype, continuous or binary.
   - **weights_info:** weights file between SNPs and cistrome.
-  - **gene:** the name of cistrome peak.
+  - **peak:** the name of cistrome peak.
   - **plink:** plink command path.
   - **Rscript:** Rscript command path.
   - **output_folder:** path of the output file.
@@ -38,11 +38,11 @@ RECWAS is a batteries-included JAR executable. All needed external jar packages 
 - **example**
   - After 'git clone', user can try our example data in the EXAMPLE folder by using<br> 
   ```java
-  java  -jar  RECWAS.jar  RECWAS  -format  csv  -input_genotype  EXAMPLE/csv_format/example.csv  -input_phenotype  EXAMPLE/csv_format/example.tsv  -input_phenotype_column  2  -input_phenotype_type  binary  -weights_info  WEIGHTS/CWAS_AR_top1.txt  -gene  chr2:10730750-10731350  -plink  path/to/plink  -Rscript  path/to/Rscript  -output_folder  path/to/output_folder
+  java  -jar  RECWAS.jar  RECWAS  -format  csv  -input_genotype  EXAMPLE/csv_format/example.csv  -input_phenotype  EXAMPLE/csv_format/example.tsv  -input_phenotype_column  2  -input_phenotype_type  binary  -weights_info  WEIGHTS/CWAS_AR_top1.txt  -peak  chr2:10730750-10731350  -plink  path/to/plink  -Rscript  path/to/Rscript  -output_folder  path/to/output_folder
     ```
   or<br>
   ```java
-  java  -jar  RECWAS.jar  RECWAS  -format  plink  -input_genotype  EXAMPLE/plink_format/example.tped  -input_phenotype  EXAMPLE/plink_format/example.tfam  -input_phenotype_column  6  -input_phenotype_type  binary  -weights_info  WEIGHTS/CWAS_AR_top1.txt  -gene  chr2:10730750-10731350  -plink  path/to/plink  -Rscript  path/to/Rscript  -output_folder  path/to/output_folder
+  java  -jar  RECWAS.jar  RECWAS  -format  plink  -input_genotype  EXAMPLE/plink_format/example.tped  -input_phenotype  EXAMPLE/plink_format/example.tfam  -input_phenotype_column  6  -input_phenotype_type  binary  -weights_info  WEIGHTS/CWAS_AR_top1.txt  -peak  chr2:10730750-10731350  -plink  path/to/plink  -Rscript  path/to/Rscript  -output_folder  path/to/output_folder
     ```
 
 - **NOTE**
@@ -52,7 +52,7 @@ RECWAS is a batteries-included JAR executable. All needed external jar packages 
 If you use the CWAS weights in analysis, please cite:<br>
 **Genetic determinants of chromatin reveal prostate cancer risk mediated by context-dependent gene regulation, Baca et al., 2022, Nat Genet** <br>
 If you use the RECWAS software in analysis, please cite:<br>
-**Leveraging Random Effects in Cistrome-Wide Association Studies for Decoding the Genetic Determinants of Prostate Cancer, Mengting et al.,**<br>
+**Leveraging Random Effects in Cistrome-Wide Association Studies for Decoding the Genetic Determinants of Prostate Cancer, Mengting Shao, Min Tian, Kaiyang Chen, Hangjin Jiang, Shuting Zhang, Zhenghui Li, Yan Shen, Feng Chen, Baixin Shen, Chen Cao, Ning Gu.**<br>
 
 ## Contacts
 Mengting Shao : mtshao@stu.njmu.edu.cn<br>
